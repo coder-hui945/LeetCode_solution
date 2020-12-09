@@ -21,13 +21,19 @@ class Solution {
     }
 
     public TreeNode mirrorTree(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        TreeNode leftRoot = mirrorTree(root.right);
-        TreeNode rightRoot = mirrorTree(root.left);
-        root.left = leftRoot;
-        root.right = rightRoot;
+//        if (root == null) {
+//            return null;
+//        }
+//        TreeNode leftRoot = mirrorTree(root.right);
+//        TreeNode rightRoot = mirrorTree(root.left);
+//        root.left = leftRoot;
+//        root.right = rightRoot;
+//        return root;
+        if (root == null) return null;
+        TreeNode left = mirrorTree(root.right);
+        TreeNode right = mirrorTree(root.left);
+        root.left = left;
+        root.right = right;
         return root;
 
     }

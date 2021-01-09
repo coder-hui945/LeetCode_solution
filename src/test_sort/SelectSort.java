@@ -30,18 +30,33 @@ public class SelectSort {//O(n^2)  O(1)   不稳定
 //            }
 //        }
 //    }
+//    {
+//        for (int i = 0; i < nums.length; i++) {
+//            int minIndex = i;
+//            for (int j = i; j < nums.length; j++) {
+//                if (nums[j]<nums[minIndex]){
+//                    minIndex = j;
+//                }
+//            }
+//            if (minIndex != i){
+//                int temp = nums[i];
+//                nums[i] = nums[minIndex];
+//                nums[minIndex] = temp;
+//            }
+//        }
+//    }
     {
         for (int i = 0; i < nums.length; i++) {
             int minIndex = i;
-            for (int j = i; j < nums.length; j++) {
-                if (nums[j]<nums[minIndex]){
+            for (int j = i; j < nums.length ; j++) {
+                if (nums[j]<nums[minIndex])
                     minIndex = j;
-                }
             }
-            if (minIndex != i){
-                int temp = nums[i];
+            if (minIndex!=i){
+                int tmp = nums[i];
                 nums[i] = nums[minIndex];
-                nums[minIndex] = temp;
+                nums[minIndex] = tmp;
+
             }
         }
     }

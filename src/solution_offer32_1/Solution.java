@@ -19,7 +19,8 @@ class TreeNode {
 }
 
 class Solution {
-    public int[] levelOrder(TreeNode root) {
+    public int[] levelOrder(TreeNode root)
+    {
         if(root == null) return new int[0];
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
@@ -37,4 +38,5 @@ class Solution {
         }
         return res;
     }
+
 }

@@ -26,18 +26,19 @@ class Solution {
     }
 
     public static int maxDepth(TreeNode root) {
-        Queue<TreeNode>queue=new ArrayDeque<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
+
         if (root == null) return 0;
-        int deep=0;
+        int deep = 0;
         queue.add(root);
-        while(!queue.isEmpty()){
-            int size=queue.size();
-            for(int i=0;i<size;i++){
-                TreeNode node=queue.poll();
-                if(node.left!=null){
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (node.left != null) {
                     queue.add(node.left);
                 }
-                if(node.right!=null){
+                if (node.right != null) {
                     queue.add(node.right);
                 }
             }
@@ -47,11 +48,11 @@ class Solution {
     }
 
     public static int maxDepth2(TreeNode root) {
-        if(root == null) {
+        if (root == null) {
             return 0;
         }
         int deep = 0;
-        deep = Math.max(maxDepth2(root.left),maxDepth2(root.right))+1;
+        deep = Math.max(maxDepth2(root.left), maxDepth2(root.right)) + 1;
         return deep;
 
     }
